@@ -7,6 +7,13 @@ if (Meteor.isClient) {
       return Playerlists.find()
     }
   })
+
+  Template.listplayers.events({
+    'click .player': function(){
+      //Add event function
+      console.log('You clicked something');
+    }
+  })
 }
 
 if (Meteor.isServer) {
