@@ -3,10 +3,13 @@
 </head>
 
 <body>
-  <h1>List Players</h1>
+  <h1>List Champ</h1>
   <ul>
     {{> listplayers}}
   </ul>
+
+  <hr/>
+  {{> addPlayerForm}}
 </body>
 
 <template name="listplayers">
@@ -14,5 +17,14 @@
     <li class="player {{selectedClass}}">{{name}} - {{score}}</li>
   {{/each}}
 
-  <input type="button" class="increment" value="Give 5 Point">
+  <input type="button" disabled="{{disable}}" class="increment" value="Give 10 Point">
+  <input type="button" disabled="{{disable}}" class="decrement" value="Take 10 Point">
+  <input type="button" disabled="{{disable}}" class="remove" value="Remove Champ">
+</template>
+<template name="addPlayerForm">
+  <form id="input_form">
+    <input type="text" id="playerName">
+    <input type="text" id="score">
+    <input type="submit" value="Add Player">
+  </form>
 </template>
